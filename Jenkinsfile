@@ -11,7 +11,8 @@ pipeline {
             steps{
                 dir("/var/lib/jenkins/workspace/G1E1/backend"){
                     withSonarQubeEnv('sonarqube'){
-                        sh 'sudo ./gradlew sonarqube'
+                        sh 'chmod +x ./gradlew'
+                        sh './gradlew sonarqube'
                     }    
                 }                
             }
@@ -27,6 +28,6 @@ pipeline {
                 	}
 		    }
 	    }
-        
+
     }
 }
